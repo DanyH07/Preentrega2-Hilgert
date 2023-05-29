@@ -29,7 +29,7 @@ const Apizzas = [
 const Acarrito = [
     
 ]
- let totalCompra =Acarrito.reduce((acum, prod)=> {
+ let totalCompra = Acarrito.reduce((acum, prod)=> {
          return accum + prod.precio}, 0)
 
 console.log (totalCompra);
@@ -39,13 +39,13 @@ function inicio(){
      let elecciones= prompt( "\n 1: Elejir Pizza. \n 2: Poner ingredientes Extras a ty gusto. \n 3: Salir") 
 
      if (elecciones==="1"){
-        Compra
+        Compra()
      }
      else if (elecciones==="2"){
-        CompraExtras
+        CompraExtras()
      }
      else if (elecciones==="3"){
-       
+        return;
      }
 }
 
@@ -111,19 +111,14 @@ function CompraExtras(){
    if (elecciones3 === "1"){
         Compra()
     }
-    
-      
+    else if (elecciones3==="2"){
+        return;
+    }
+
     }
 
 
-
-
-
-
-
 inicio()
-Compra()
-CompraExtras()
-carrito()
+
 
 
