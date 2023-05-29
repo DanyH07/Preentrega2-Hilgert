@@ -31,6 +31,23 @@ const Acarrito = [
 ]
 console.log (Acarrito)
 
+function inicio(){
+     let elecciones= prompt( "\n 1: Elejir Pizza. \n 2: Poner ingredientes Extras a ty gusto. \n 3: Salir") 
+
+     if (elecciones==="1"){
+        Compra
+     }
+     else if (elecciones==="2"){
+        CompraExtras
+     }
+     else if (elecciones==="3"){
+       
+     }
+
+}
+
+
+
 function Compra(){
     let elecciones = alert(`Estas son nuestras Pizzas
     1: Muzzarella $1300
@@ -47,10 +64,10 @@ function Compra(){
     alert ("Hicimos nota de tu pedido")
 
     let eleccion2 = prompt (" Ingrese una opcion  \n 1: Seguir Comprando  \n 2: agregdarle un Extra :=D . \n 3: Ir al Carrito.")
-    while (eleccion2 === "1"){
+    if(eleccion2 === "1"){
        Compra()
     }
-    if (eleccion2 === "2"){
+    else if (eleccion2 === "2"){
         CompraExtras()
     }
     else if (eleccion2==="3"){
@@ -73,10 +90,10 @@ function CompraExtras(){
     alert ("Hicimos nota de tu ingrediente extra!")
 
     let eleccion2 = prompt (" Ingrese una opcion  \n 1: Seguir Comprando una Pizza. \n 2: Queres mas Extras!! \n 3: Ir al Carrito.")
-    while (eleccion2 === "1"){
+    if (eleccion2 === "1"){
         Compra()
     }
-    if (eleccion2 === "2"){
+    else if (eleccion2 === "2"){
         CompraExtras()
     }
     else if (eleccion2 ==="3"){
@@ -91,41 +108,22 @@ function CompraExtras(){
     
     let elecciones3= prompt( "\n 1: Seguir Comprando \n 2: Finalizar compra")
     
-    while (elecciones3 === "1"){
+   if (elecciones3 === "1"){
         Compra()
     }
-    if (elecciones3 ==="2") {
-       let salir=  alert("Muchas Gracias por Tu compra!") }
+    
       
-            
     }
 
-    
-
- 
-
-let elecciones= prompt( "\n 1: Elejir Pizza. \n 2: Poner ingredientes Extras a ty gusto. \n 3: Salir") 
-
-while (elecciones !== "3"){
-    if (elecciones === "1"){
-        Compra (Acarrito)
-    }
-    else if (elecciones=== "2" ){
-        CompraExtras(Acarrito)
-    }
-    else if (elecciones === "3"){ 
-        break
-    }
-    }
-    
 
 
 
 
 
-console.log (Carrito)
 
+inicio()
 Compra()
-
+CompraExtras()
+carrito()
 
 
