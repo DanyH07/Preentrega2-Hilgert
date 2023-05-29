@@ -6,7 +6,6 @@ class Pizzas{
 }
 
 
-
 let Muzzarella = new Pizzas (`Muzzarella`, "1300");
 let Napolitana = new Pizzas (`Napolitana`, "1800");
 let quesos = new Pizzas (`4quesos`, "2000");
@@ -38,13 +37,16 @@ console.log (totalCompra);
 console.log (Acarrito)
 
 function inicio(){
-     let elecciones= prompt( "\n 1: Elejir Pizza. \n 2: Poner ingredientes Extras a ty gusto. \n 3: Salir") 
+     let elecciones= prompt( "\n 1: Elejir Pizza. \n 2: Poner ingredientes Extras a ty gusto. \n 3: Ver Productos en Descuento. \n 4: Salir. ") 
 
      if (elecciones==="1"){
         Compra()
      }
      else if (elecciones==="2"){
         CompraExtras()
+     }
+     else if (elecciones==="3"){
+        descuento()
      }
      else if (elecciones==="3"){
         return;
@@ -79,9 +81,9 @@ function Compra(){
 
 function CompraExtras(){
     const elecciones = alert(`Pensando en tus propios gustos Extras, tipea el nombre para agregar al carrito:
-    1: DobleChedar $500
-    2: DobleAnchoas $800
-    3: AceitunasNegras $450
+    1: DobleChedar $1000
+    2: DobleAnchoas $1100
+    3: AceitunasNegras $1300
     `)
     let tipo= prompt("Escribe el producto que quieres agregar:")
     let precio= prompt("Escribe el importe del producto extra a agregar: ")
@@ -111,7 +113,7 @@ function CompraExtras(){
     let elecciones3= prompt( "\n 1: Seguir Comprando \n 2: Finalizar compra")
     
    if (elecciones3 === "1"){
-        Compra()
+        inicio()
     }
     else if (elecciones3==="2"){
         return;
@@ -119,10 +121,16 @@ function CompraExtras(){
 
     }
 
-//  function descuento(){
-//     const descuentos = precio.filter((Pizzas)
+  function descuento(){
+     const descuentos = Apizzas.filter((p) => p.precio > "1400")
+     
+     console.log (descuentos)
 
-//  }
+     const eleccion4= prompt("\n 1: Visualizar la consola donde se encuentran nustros productos con descuento")
+     if (eleccion4=== "1"){
+        inicio()
+     }
+  }
 
 
 
