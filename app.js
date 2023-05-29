@@ -29,10 +29,12 @@ const Apizzas = [
 const Acarrito = [
     
 ]
- let totalCompra = Acarrito.reduce((acum, prod)=> {
-         return accum + prod.precio}, 0)
+
+let totalCompra = Acarrito.reduce((acum, prod) =>{acum + prod.precio}, 0)
+
 
 console.log (totalCompra);
+
 console.log (Acarrito)
 
 function inicio(){
@@ -116,6 +118,13 @@ function CompraExtras(){
     }
 
     }
+
+//  function descuento(){
+//     const descuentos = precio.filter((Pizzas)
+
+//  }
+
+
 
 
 inicio()
