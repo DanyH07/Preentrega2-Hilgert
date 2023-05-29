@@ -6,13 +6,13 @@ class Pizzas{
 }
 
 
-let Muzzarella = new Pizzas (`Muzzarella`, "1300");
-let Napolitana = new Pizzas (`Napolitana`, "1800");
-let quesos = new Pizzas (`4quesos`, "2000");
-let Anchoas = new Pizzas (`Anchoas`, "2100");
-let DobleChedar = new Pizzas(`Doble Chedar`, "1000");
-let DobleAnchoa = new Pizzas(`Doble Anchoa`, "1100");
-let AceitunasNegras = new Pizzas(`Aceitunas Negras`, "1300");
+let Muzzarella = new Pizzas (`Muzzarella`, 1300);
+let Napolitana = new Pizzas (`Napolitana`, 1800);
+let quesos = new Pizzas (`4quesos`, 2000);
+let Anchoas = new Pizzas (`Anchoas`, 2100);
+let DobleChedar = new Pizzas(`Doble Chedar`, 1000);
+let DobleAnchoa = new Pizzas(`Doble Anchoa`, 1100);
+let AceitunasNegras = new Pizzas(`Aceitunas Negras`, 1300);
 
 
 const Apizzas = [
@@ -29,15 +29,10 @@ const Acarrito = [
     
 ]
 
-let totalCompra = Acarrito.reduce((acum, prod) =>{acum + prod.precio}, 0)
-
-
-console.log (totalCompra);
-
 console.log (Acarrito)
 
 function inicio(){
-     let elecciones= prompt( "\n 1: Elejir Pizza. \n 2: Poner ingredientes Extras a ty gusto. \n 3: Ver Productos en Descuento. \n 4: Salir. ") 
+     let elecciones= prompt( "\n 1: Elejir Pizza. \n 2: Poner ingredientes Extras a ty gusto. \n 3: Ver nuestos mejores precios \n 4: Salir. ") 
 
      if (elecciones==="1"){
         Compra()
@@ -46,7 +41,7 @@ function inicio(){
         CompraExtras()
      }
      else if (elecciones==="3"){
-        descuento()
+        preciosEconomicos()
      }
      else if (elecciones==="3"){
         return;
@@ -121,18 +116,22 @@ function CompraExtras(){
 
     }
 
-  function descuento(){
-     const descuentos = Apizzas.filter((p) => p.precio > "1400")
+  function preciosEconomicos(){
+     const economicos = Apizzas.filter((p) => p.precio < 1350)
+     for (const Apizzas of economicos){
+        alert(`estas son las ofertas ${Apizzas.tipo} por un precio de ${Apizzas.precio}`)
+     }
      
-     console.log (descuentos)
-
-     const eleccion4= prompt("\n 1: Visualizar la consola donde se encuentran nustros productos con descuento")
+     console.log (economicos)
+     
+     const eleccion4= prompt("\n 1: Visualizar en consola Nuestros mejores precios")
+    
      if (eleccion4=== "1"){
         inicio()
      }
+     
   }
-
-
+  
 
 
 inicio()
