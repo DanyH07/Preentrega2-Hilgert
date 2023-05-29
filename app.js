@@ -29,6 +29,10 @@ const Apizzas = [
 const Acarrito = [
     
 ]
+ let totalCompra =Acarrito.reduce((acum, prod)=> {
+         return accum + prod.precio}, 0)
+
+console.log (totalCompra);
 console.log (Acarrito)
 
 function inicio(){
@@ -43,10 +47,7 @@ function inicio(){
      else if (elecciones==="3"){
        
      }
-
 }
-
-
 
 function Compra(){
     let elecciones = alert(`Estas son nuestras Pizzas
@@ -56,7 +57,6 @@ function Compra(){
     4: Anchoas $2100` )
     let tipo= prompt("Escribe el producto de tu compra:")
     let precio= prompt("Tipea el importe de tu producto")
-
 
 
     const agregarpizza = new Pizzas(tipo,precio)
@@ -103,7 +103,7 @@ function CompraExtras(){
 }
  function carrito (){
     Acarrito.map((Apizzas)=> {
-        alert(`Has elejido ${Apizzas.tipo}`)
+        alert(`Has elejido ${Apizzas.tipo} por un precio de ${Apizzas.precio}`)
     })
     
     let elecciones3= prompt( "\n 1: Seguir Comprando \n 2: Finalizar compra")
